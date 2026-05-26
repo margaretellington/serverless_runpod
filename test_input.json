@@ -1,0 +1,17 @@
+{
+  "input": {
+    "image_url": "https://example.com/influencer.png",
+    "audio_url": "https://example.com/wallflowerscandel.mp3",
+    "positive_prompt": "Ultra realistic UGC style talking-head video of a young female influencer speaking naturally to the camera, direct eye contact with lens, casual posture, relaxed shoulders, natural blinking, subtle head movements, tiny pauses while speaking, authentic mouth motion synced to dialogue, micro-expressions, soft smiles, occasional eyebrow movement, imperfect human behavior.",
+    "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留",
+    "seed": 282799903878324,
+    "steps": 4,
+    "cfg": 1.0,
+    "width": 320,
+    "height": 480,
+    "num_frames": 77,
+    "chunk_length": 114,
+    "batch_size": 1,
+    "frame_multiplier": 2
+  }
+}

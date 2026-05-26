@@ -1,0 +1,5 @@
+# RunPod worker template for ComfyUI WAN 2.2 S2V Audio-to-Video
+__pycache__/
+*.pyc
+.venv/
+*.safetensors
