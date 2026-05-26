@@ -15,7 +15,7 @@ WORKDIR /app/ComfyUI
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /app/ComfyUI && \
     pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 && \
     pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir runpod boto3 requests
+    pip install --no-cache-dir runpod boto3 requests huggingface_hub
 
 # Copy worker files
 COPY handler.py /app/handler.py

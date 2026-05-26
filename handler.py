@@ -336,7 +336,7 @@ def handler(job: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    if not _wait_for_comfyui(timeout=60):
+    if not _wait_for_comfyui(timeout=120):
         log.error("ComfyUI did not become ready. Exiting.")
         raise SystemExit(1)
 
