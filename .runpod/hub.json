@@ -1,6 +1,6 @@
 {
   "title": "ComfyUI — WAN 2.2 S2V Audio-to-Video",
-  "description": "Generate talking-head videos from a reference image + audio using WAN 2.2 S2V 14B. Accepts an image URL and audio URL, produces a lip-synced video uploaded to your S3 bucket. Models are auto-downloaded on first cold start (~25 GB).",
+  "description": "Generate talking-head videos from a reference image and audio file using WAN 2.2 S2V 14B. Accepts an image URL and audio URL, produces a lip-synced video uploaded to your RunPod S3 bucket. All models are auto-downloaded on first cold start (~25 GB) — no manual setup required.",
   "type": "serverless",
   "category": "video",
   "iconUrl": "https://dummyimage.com/100x100/ff5733/fff&text=WAN",
@@ -44,7 +44,7 @@
         "input": {
           "name": "S3 Access Key ID",
           "type": "string",
-          "description": "RunPod S3 access key for uploading outputs",
+          "description": "RunPod S3 access key for uploading outputs (leave empty for public buckets)",
           "default": "",
           "advanced": false
         }
@@ -54,7 +54,7 @@
         "input": {
           "name": "S3 Secret Access Key",
           "type": "string",
-          "description": "RunPod S3 secret key for uploading outputs",
+          "description": "RunPod S3 secret key for uploading outputs (leave empty for public buckets)",
           "default": "",
           "advanced": false
         }
@@ -84,7 +84,7 @@
         "input": {
           "name": "Model Volume Path",
           "type": "string",
-          "description": "Path to network volume with pre-downloaded models. Leave empty to auto-download on first run.",
+          "description": "Path to a RunPod network volume with pre-downloaded models. Leave empty to auto-download models inside the container on first cold start.",
           "default": "",
           "advanced": true
         }

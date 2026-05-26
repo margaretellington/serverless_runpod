@@ -1,31 +1,35 @@
-[
-  {
-    "name": "wan-audio-simple",
-    "input": {
-      "image_url": "https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/input/example.png",
-      "audio_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      "positive_prompt": "A person speaking naturally to the camera, direct eye contact, casual posture, natural head movements",
-      "negative_prompt": "blurry, low quality, distorted, watermark, text",
-      "seed": 42,
-      "steps": 4,
-      "cfg": 1.0,
-      "width": 320,
-      "height": 480,
-      "num_frames": 33,
-      "chunk_length": 33,
-      "batch_size": 1,
-      "frame_multiplier": 2,
-      "timeout": 900
-    },
-    "timeout": 900000,
-    "config": {
-      "gpuTypeId": "AMPERE_48",
-      "gpuCount": 1,
-      "allowedCudaVersions": ["12.4"],
-      "env": {
-        "COMFY_LOG_LEVEL": "INFO",
-        "S3_BUCKET": "comfyui-wan-outputs"
-      }
+{
+  "tests": [
+    {
+      "name": "wan-audio-basic",
+      "input": {
+        "image_url": "https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/input/example.png",
+        "audio_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        "positive_prompt": "A person speaking naturally to the camera, direct eye contact, casual posture, natural head movements",
+        "negative_prompt": "blurry, low quality, distorted, watermark, text",
+        "seed": 42,
+        "steps": 4,
+        "cfg": 1.0,
+        "width": 320,
+        "height": 480,
+        "num_frames": 17,
+        "chunk_length": 17,
+        "batch_size": 1,
+        "frame_multiplier": 1,
+        "timeout": 900
+      },
+      "timeout": 900000
     }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA A40",
+    "gpuCount": 1,
+    "env": [
+      { "key": "COMFY_LOG_LEVEL", "value": "INFO" },
+      { "key": "S3_BUCKET", "value": "comfyui-wan-outputs" }
+    ],
+    "allowedCudaVersions": [
+      "12.4"
+    ]
   }
-]
+}
