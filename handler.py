@@ -162,6 +162,8 @@ def _upload_to_s3(local_path: Path) -> str | None:
     s3 = boto3.client(
         "s3",
         endpoint_url=S3_ENDPOINT or None,
+        aws_access_key_id=os.getenv("S3_ACCESS_KEY_ID", ""),
+        aws_secret_access_key=os.getenv("S3_SECRET_ACCESS_KEY", ""),
         config=boto3.session.Config(s3={"addressing_style": "path"}),
     )
     key = f"wan-audio-outputs/{uuid.uuid4().hex}/{local_path.name}"
